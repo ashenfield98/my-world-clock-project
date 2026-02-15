@@ -23,6 +23,18 @@ function updateTime() {
     amsterdamTimeElement.innerHTML = `${amsterdamFormat.format("h:mm:ss [<small>]A[</small>]")}`;
     amsterdamDateElement.innerHTML = `${amsterdamFormat.format("MMMM Do YYYY")}`;
   }
+
+  // jamaica
+  let jamaicaElement = document.querySelector("#jamaica");
+  if (jamaicaElement) {
+    let jamaicaTimeElement = jamaicaElement.querySelector(".time");
+    let jamaicaDateElement = jamaicaElement.querySelector(".date");
+
+    let jamaicaFormat = moment().tz("America/Jamaica");
+
+    jamaicaTimeElement.innerHTML = `${jamaicaFormat.format("h:mm:ss [<small>]A[</small>]")}`;
+    jamaicaDateElement.innerHTML = `${jamaicaFormat.format("MMMM Do YYYY")}`;
+  }
 }
 
 updateTime();
@@ -44,6 +56,11 @@ function updateCity(event) {
           </div>
           <div class="time">${cityTime.format("h:mm:ss [<small>]A[</small>]")}</div>
         </div>
+        <style>
+        .city {
+        border-bottom: none;
+}</style>
+
         <a href="/">All cities</a>
   `;
 }
